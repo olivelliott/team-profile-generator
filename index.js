@@ -33,17 +33,71 @@ const Manager = require("./lib/Manager");
 //         super(name);
 //     };
 
-//     inquirer.prompt({
-//         type: "input",
-//         name: "managerName",
-//         message: "What is your team manager's name?",
-//         validate: (managerNameInput) => {
-//             if (managerNameInput) {
-//             return true;
-//             } else {
-//             console.log("Please input a manager name");
-//             return false;
-//             }
-//         },
-//     });
-// }
+const managerPrompts = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is your team manager's name?"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is your team manager's ID?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your team manager's email address?"
+    },
+    {
+        type: "input",
+        name: "officeNumber",
+        message: "What is your team manager's office number?"
+    }
+];
+
+const engineerPrompts = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is your engineer's name?"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is your engineer's ID?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your engineer's email address?"
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is your engineer's GitHub profile?"
+    }
+];
+
+const internPrompts = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is your intern's name?"
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is your intern's ID?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your intern's email address?"
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What school does your intern attend?"
+    }
+]
