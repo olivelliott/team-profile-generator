@@ -5,9 +5,6 @@
 
 
 
-
-//  * Check that email is an actual email address, not a string
-
 const Employee = require('../lib/Employee')
 
 describe('EmployeeProfile', () => {
