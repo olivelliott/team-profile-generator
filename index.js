@@ -15,3 +15,35 @@
 // THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
 // WHEN I decide to finish building my team
 // THEN I exit the application, and the HTML is generated
+
+
+const inquirer = require("inquirer");
+const Manager = require("./lib/Manager");
+
+// Class EmployeePrompts {
+//     constructor(name, email, id) {
+//         this.name = name;
+//         this.email = email;
+//         this.id = id;
+//     }
+
+//     teamManagerPrompts
+// class TeamProfile extends Manager {
+//     constructor (name = '') {
+//         super(name);
+//     };
+
+//     inquirer.prompt({
+//         type: "input",
+//         name: "managerName",
+//         message: "What is your team manager's name?",
+//         validate: (managerNameInput) => {
+//             if (managerNameInput) {
+//             return true;
+//             } else {
+//             console.log("Please input a manager name");
+//             return false;
+//             }
+//         },
+//     });
+// }

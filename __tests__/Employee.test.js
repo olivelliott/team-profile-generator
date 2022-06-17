@@ -4,20 +4,37 @@
 // THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
 
 
-const Manager = require('../lib/employee.js')
-
-test('checks if team managers name was entered', () => {
-    const manager = new Manager('profile');
-    expect(manager.name).toEqual(expect.any(String));
-    // expect(manager.employeeID).toEqual(expect.any(Number));
-    // expect(manager.email).toEqual(expect.any(String));
-    // expect(manager.officeNumber).toEqual(expect.any(Number));
-})
-
-// test('checks if team managers employee id is a number', () => {
-//     const ID = new ID('number');
-//         expect(ID.employeeID).toEqual(expect.any(Number));
-// });
 
 
 //  * Check that email is an actual email address, not a string
+
+const Employee = require('../lib/Employee')
+
+describe('EmployeeProfile', () => {
+    const employee = new Employee('Olive', 1, 'example@gmail.com');
+
+    describe('Name', () => {
+        it("checks if team manager's name is a string", () => {
+            expect(employee.name).toEqual(expect.any(String));
+        });
+    });
+
+    describe('EmployeeId', () => {
+        it("checks if employee id is a number", () => {
+            expect(employee.id).toEqual(expect.any(Number))
+        })
+    })
+
+    describe('Email', () => {
+        it('checks if email is a string', () => {
+            expect(employee.email).toEqual(expect.stringContaining(employee.email));
+        })
+    })
+});
+
+//     describe('employeeId', () => {
+//         it('checks if employee id was entered', () => {
+//             expect(manager.employeeId).toEqual(expect.any(Number));
+//         });
+//     });
+// });
