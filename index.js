@@ -18,6 +18,7 @@
 
 
 const inquirer = require("inquirer");
+const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 
 // Class EmployeePrompts {
@@ -32,6 +33,7 @@ const Manager = require("./lib/Manager");
 //     constructor (name = '') {
 //         super(name);
 //     };
+
 
 const managerPrompts = [
     {
@@ -100,4 +102,56 @@ const internPrompts = [
         name: "school",
         message: "What school does your intern attend?"
     }
+];
+
+const addMorePrompt = [
 ]
+
+function teamProfile() {
+    this.teamProfile = [];
+    this.getManagerData();
+};
+
+teamProfile.prototype.getManagerData = function() {
+    inquirer.prompt(managerPrompts)
+        .then(({ name, id, email, officeNumber }) => {
+            this.teamProfile.push(new Manager(name, id, email, officeNumber))
+            this.addMoreEmployees();
+        })
+}
+
+teamProfile.prototype.addMoreEmployees = function() {
+    inquirer.prompt({
+        type: 'list',
+        name: 'addMore',
+        message: 'Which type of team member would you like to add?',
+        choices: [
+            "Engineer",
+            "Intern",
+            "I don't want to add any more team members",
+        ],
+    })
+    .then (({ addMore }) => {
+        if (addMore === "Engineer") {
+            return this.getEngineerData();
+        } if (addMore === "Intern") {
+            return this.getInternData();
+        } else {
+            console.log(this.teamProfile);
+            return;
+        }
+    });
+}
+
+teamProfile.prototype.getEngineerData = function() {
+    inquirer.prompt(engineerPrompts)
+        .then (({ name, id, email, github }) => {
+            this.teamProfile.push(new Engineer(name, id, email, github));
+            this.addMoreEmployees();
+        })
+
+}
+
+
+new teamProfile()
+    // .getManagerData()
