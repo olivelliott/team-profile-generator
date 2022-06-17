@@ -20,19 +20,7 @@
 const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
-
-// Class EmployeePrompts {
-//     constructor(name, email, id) {
-//         this.name = name;
-//         this.email = email;
-//         this.id = id;
-//     }
-
-//     teamManagerPrompts
-// class TeamProfile extends Manager {
-//     constructor (name = '') {
-//         super(name);
-//     };
+const Intern = require("./lib/Intern")
 
 
 const managerPrompts = [
@@ -104,9 +92,6 @@ const internPrompts = [
     }
 ];
 
-const addMorePrompt = [
-]
-
 function teamProfile() {
     this.teamProfile = [];
     this.getManagerData();
@@ -152,6 +137,13 @@ teamProfile.prototype.getEngineerData = function() {
 
 }
 
+teamProfile.prototype.getInternData = function () {
+  inquirer.prompt(internPrompts)
+    .then(({ name, id, email, school }) => {
+        this.teamProfile.push(new Intern(name, id, email, school));
+        this.addMoreEmployees();
+  });
+};
 
-new teamProfile()
-    // .getManagerData()
+
+new teamProfile();
