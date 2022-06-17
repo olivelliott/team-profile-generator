@@ -20,18 +20,19 @@ describe('EmployeeProfile', () => {
         it("checks if employee id is a number", () => {
             expect(employee.id).toEqual(expect.any(Number))
         })
-    })
+    });
 
     describe('Email', () => {
         it('checks if email is a string', () => {
             expect(employee.email).toEqual(expect.stringContaining(employee.email));
         })
-    })
-});
+    });
 
-//     describe('employeeId', () => {
-//         it('checks if employee id was entered', () => {
-//             expect(manager.employeeId).toEqual(expect.any(Number));
-//         });
-//     });
-// });
+    // describe('EmployeeProfile', () => {
+    //     it('checks if employee information is created into an object', () => {
+    //         expect(employee.profile).toEqual(
+    //             expect.arrayContaining([expect.any(Object)])
+    //         )
+    //     })
+    // });
+});
