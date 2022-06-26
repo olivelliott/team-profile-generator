@@ -1,7 +1,6 @@
 const Engineer = require('../lib/Engineer')
 
 describe("Engineer Profile", () => {
-  // const engineer = new Engineer("Olive", 10, "example@gmail.com", "github", "engineer");
 
   it("Checks to see if github value is retrieved", () => {
     const github = 'Olivelliott';

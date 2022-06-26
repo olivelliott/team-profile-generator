@@ -1,15 +1,24 @@
 const Intern = require('../lib/Intern')
 
-describe('Intern', () => {
-    const intern = new Intern('Olive', 10, 'example@gmail.com', 'school', 'intern');
-    it("checks to see if the school entered is a string", () => {
-        expect(intern.school).toEqual(expect.any(String));
-    });
+describe("Intern Profile", () => {
 
-      it("Checks to ensure the correct role is assigned (intern)", () => {
-        expect(intern.role).toEqual("intern");
-      });
+  it("Checks to see if school value is retrieved", () => {
+    const school = "UNC";
+    const newIntern = new Intern("Olive", 10, "example@gmail.com", school);
+    expect(newIntern.school).toBe(school);
+  });
 
-})
+  it("Checks the getSchool method to return the school value", () => {
+    const school = "UNC";
+    const newIntern = new Intern("Olive", 10, "example@gmail.com", school);
+    expect(newIntern.getSchool()).toEqual(school);
+  });
 
+  it("Checks the role method to return as Intern", () => {
+    const returnRole = "Intern";
+    const newIntern = new Intern("Olive", 10, "example@gmail.com", "UNC");
+    expect(newIntern.getRole()).toBe(returnRole);
+  });
+  
+});
 
