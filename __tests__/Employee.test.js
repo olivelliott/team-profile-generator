@@ -59,4 +59,12 @@ describe('Employee Profile Methods', () => {
             expect(newEmployee.getEmail()).toBe(testEmail);
         })
     })
+
+    describe("getRole method", () => {
+      it("Returns the role of the employee through getRole method", () => {
+        const testRole = "Employee";
+        const newEmployee = new Employee("Olive", 2, testRole);
+        expect(newEmployee.getRole()).toBe(testRole);
+      });
+    });
 });
