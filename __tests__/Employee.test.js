@@ -27,12 +27,4 @@ describe('EmployeeProfile', () => {
             expect(employee.email).toEqual(expect.stringContaining(employee.email));
         })
     });
-
-    // describe('EmployeeProfile', () => {
-    //     it('checks if employee information is created into an object', () => {
-    //         expect(employee.profile).toEqual(
-    //             expect.arrayContaining([expect.any(Object)])
-    //         )
-    //     })
-    // });
 });
