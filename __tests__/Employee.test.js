@@ -59,4 +59,4 @@ describe('Employee Profile Methods', () => {
             expect(newEmployee.getEmail()).toBe(testEmail);
         })
     })
-})
+});

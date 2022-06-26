@@ -1,14 +1,25 @@
 const Engineer = require('../lib/Engineer')
 
-describe("Engineer", () => {
-  const engineer = new Engineer("Olive", 10, "example@gmail.com", "github", "engineer");
+describe("Engineer Profile", () => {
+  // const engineer = new Engineer("Olive", 10, "example@gmail.com", "github", "engineer");
 
-  it("checks to see if github entered is a string", () => {
-    expect(engineer.github).toEqual(expect.any(String));
+  it("Checks to see if github value is retrieved", () => {
+    const github = 'Olivelliott';
+    const newEngineer = new Engineer('Olive', 10, 'example@gmail.com', github);
+    expect(newEngineer.github).toBe(github);
   });
 
-  it("Checks to ensure the correct role is assigned (engineer)", () => {
-    expect(engineer.role).toEqual("engineer");
+  it("Checks the getGitHub method to return the github value", () => {
+    const github = "Olivelliott";
+    const newEngineer = new Engineer("Olive", 10, "example@gmail.com", github);
+    expect(newEngineer.getGithub()).toEqual(github);
+  });
+
+  it('Checks the role method to return as Engineer', () => {
+    const returnRole = "Engineer";
+    const newEngineer = new Engineer('Olive', 10, 'example@gmail.com', 'olivelliott');
+    expect(newEngineer.getRole()).toBe(returnRole);
   })
+
 });
 
