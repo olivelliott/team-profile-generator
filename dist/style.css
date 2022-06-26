@@ -1,0 +1,13 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    padding: 0;
+}
+
+.card h3 {
+    font-size: 1rem;
+}

@@ -13,10 +13,10 @@ const generateTeam = team => {
     const generateManager = manager => {
         // const { name, id, email, officeNumber } = employee;
         return `
-            <div class="card employee-card">
-                <div class="card-header bg-primary text-white">
+            <div class="card employee-card rounded col col-lg-4">
+                <div class="card-header bg-dark text-white">
                     <h2 class="card-title">${manager.getName()}</h2>
-                    <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
+                    <h3 class="card-subtitle"><i class="icon fa-solid fa-star fa-xs"></i>${manager.getRole()}</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -32,10 +32,10 @@ const generateTeam = team => {
     const generateEngineer = engineer => {
     //   const { name, id, email, github } = employee;
     return `
-            <div class="card employee-card">
-                <div class="card-header bg-primary text-white">
+            <div class="card employee-card rounded col col-lg-4">
+                <div class="card-header bg-dark text-white">
                     <h2 class="card-title">${engineer.getName()}</h2>
-                    <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
+                    <h3 class="card-title"><i class="fa-solid fa-glasses fa-xs"></i>${engineer.getRole()}</h3>
                 </div>
             <div class="card-body">
                 <ul class="list-group">
@@ -51,10 +51,10 @@ const generateTeam = team => {
     const generateIntern = intern => {
     //   const { name, id, email, school } = employee;
     return `
-        <div class="card employee-card">
-                <div class="card-header bg-primary text-white">
+        <div class="card employee-card rounded col col-lg-4">
+                <div class="col-12 card-header bg-dark text-white">
                     <h2 class="card-title">${intern.getName()}</h2>
-                    <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
+                    <h3 class="card-title"><i class="fa-solid fa-graduation-cap fa-xs"></i>${intern.getRole()}</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -116,20 +116,31 @@ module.exports = team => {
     <!DOCTYPE html>
     <html lang="en">
     <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-          crossorigin="anonymous"
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
         />
-      <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/12be365f5a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./style.css">
+        <title>Team Profile</title>
     </head>
-    <header>Employee Profile</header>
+
+    <header class="title text-center text-uppercase bg-info text-white p-5">
+        <h1>Employee Profile</h1>
+    </header>
+    
     <body>
-      <p>${generateTeam(team)}</p>
+        <div class="row text-center">
+            ${generateTeam(team)}
+        </div>
     </body>
     </html>
     `;
